@@ -1,0 +1,42 @@
+$time-dark: .32s;
+// Primary
+
+$LimeGreen: hsl(163, 72%, 41%);
+$BrightRed: hsl(356, 69%, 56%);
+
+$Facebook: hsl(208, 92%, 53%);
+$Twitter: hsl(203, 89%, 53%);
+$Instagram:     linear-gradient(90deg, hsl(37, 97%, 70%),  hsl(329, 70%, 58%));
+$YouTube: hsl(348, 97%, 39%);
+
+// Dark Theme
+
+$ToggleActive:  linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+// Light Theme
+
+$ToggleInactive: hsl(230, 22%, 74%);
+
+// Neutral
+
+// Dark Theme
+
+$VeryDarkBlueBg: hsl(230, 17%, 14%); //(BG)
+$VeryDarkBluePattern: hsl(232, 19%, 15%); //(Top BG Pattern)
+$DarkDesaturatedBlue: hsl(228, 28%, 20%); //(Card BG)
+$DesaturatedBlue: hsl(228, 34%, 66%); //(Text)
+$White: hsl(0, 0%, 100%); //(Text)
+
+// Light Theme
+
+$White: hsl(0, 0%, 100%); //(BG) bg
+$VeryPaleBlue: hsl(225, 100%, 98%); //(Top BG Pattern)  bgPattern
+$LightGrayishBlue: hsl(227, 47%, 96%); //(Card BG)  bgCard
+$DarkGrayishBlue: hsl(228, 12%, 44%); //(Text)  textWeak
+$VeryDarkBlue: hsl(230, 17%, 14%); //(Text)     textStrong
+
+$bg:hsl(0, 0%, 100%);
+$bgPattern:hsl(225, 100%, 98%);
+$bgCard:hsl(227, 47%, 96%);
+$textWeak: hsl(228, 12%, 44%);
+$textStrong: hsl(230, 17%, 14%);

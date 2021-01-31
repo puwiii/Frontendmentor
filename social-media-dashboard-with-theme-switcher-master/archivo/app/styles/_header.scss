@@ -1,0 +1,107 @@
+.header{
+    display: flex;
+    min-height: 120px;
+
+    &.dark-mode{
+
+        .tittle{
+            color: $White;
+        }
+
+        .subtittle{
+            color: $DesaturatedBlue;
+        }
+
+        .toggle-container{
+            h3{
+                color: $DesaturatedBlue;
+            }
+        }
+    }
+
+    @include breakpoint-down(medium){
+        display: block;
+    }
+
+    .tittle{
+        font-size: 30px;
+        line-height: 30px;
+        margin-bottom: 5px;
+        transition: color $time-dark ease-in-out;
+
+        @include breakpoint-down(small){
+            font-size: 24px;
+        }
+    }
+
+    .subtittle{
+        font-size: 14px;
+        font-weight: 700;
+        color: $textWeak;
+        transition: color $time-dark ease-in-out;
+        margin-bottom: 50px;
+
+        @include breakpoint-down(medium){
+            margin-bottom: 0;
+            padding-bottom: 30px;
+            border-bottom: 1px $DesaturatedBlue solid;
+        }
+    }
+
+    .toggle-container{
+        display: flex;
+        margin-left: auto;
+        width: 140px;
+        height: 100%;
+
+        @include breakpoint-down(medium){
+            width: 100%;
+            margin: 30px 0;
+        }
+
+        h3{
+            font-size: 14px;
+            color: $textWeak;
+            transition: color $time-dark ease-in-out;
+            line-height: 30px;
+        }
+
+        .toggle{
+            cursor: pointer;
+            position: relative;
+            width: 55px;
+            height: 30px;
+            border-radius: 15px;
+            background: $ToggleInactive;
+            margin-left: auto;
+    
+            &:hover{
+                background: $ToggleActive;
+            }
+    
+            .circle{
+                position: absolute;
+                top: 3px;
+                left: 28px; //3.5px actived
+                width: 24px;
+                height: 24px;
+                border-radius: 12.5px;
+                background-color: $bgCard;
+                animation: slide-out $time-dark ease-out both;
+                transition: background-color $time-dark ease-in-out;
+    
+                &.dark-mode{
+                    background-color: $DarkDesaturatedBlue;
+                }
+            }
+        }
+
+        .toggle-active{
+            background: $ToggleActive;
+            & > .circle{
+                animation: slide-in $time-dark ease-out both;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app/styles/styles.css">
+    <title>social-media-dashboard-with-theme-switcher-master</title>
+    <link rel="shortcut icon" href="/images/favicon-32x32.png" type="image/x-icon">
+</head>
+<body>
+    <main class="main" id="main">
+
+        <div class="background"></div>
+        
+        <div class="container">
+
+            <header class="header" id="header">
+                <div>
+                    <h1 class="tittle">Social Media Dashboard</h1>
+                    <p class="subtittle">Total Followers: 23,004<span id="totalFollowers"></span></p>
+                </div>
+
+                <div class="toggle-container">
+                    <h3>Dark Mode</h3>
+                    <div class="toggle" id="toggleButton">
+                        <div class="circle" id="circle"></div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="primarygrid">
+                <div class="card face">
+                    <div class="line line-face"></div>
+                    <div class="account flex flex-ai-c flex-jc-c">
+                        <img src="/images/icon-facebook.svg" alt="facebook icon">
+                        <h2 id="account">@nathanf</h2>
+                    </div>
+                    <div class="followers">
+                        <h2><span  id="followersFacebook">1987</span></h2>
+                        <p>FOLLOWERS</p>
+                    </div>
+                    <p class="variation" id="variationFace"><span></span>12 today</p>
+                </div>
+    
+                <div class="card twitter">
+                    <div class="line line-twitter"></div>
+                    <div class="account flex flex-ai-c flex-jc-c">
+                        <img src="/images/icon-twitter.svg" alt="twitter icon">
+                        <h2 id="account">@nathanf</h2>
+                    </div>
+                    <div class="followers">
+                        <h2><span  id="followersTwitter">1044</span></h2>
+                        <p>FOLLOWERS</p>
+                    </div>
+                    <p class="variation" id="variationTwitter"><span></span>99 today</p>
+                </div>
+                
+                <div class="card instagram">
+                    <div class="line line-instagram"></div>
+                    <div class="account flex flex-ai-c flex-jc-c">
+                        <img src="/images/icon-instagram.svg" alt="instagram icon">
+                        <h2 id="account">@nathanf</h2>
+                    </div>
+                    <div class="followers">
+                        <h2><span  id="followersInstagram">11</span>K</h2>
+                        <p>FOLLOWERS</p>
+                    </div>
+                    <p class="variation" id="variationInstagram"><span></span>1099 today</p>
+                </div>
+    
+                <div class="card youtube">
+                    <div class="line line-youtube"></div>
+                    <div class="account flex flex-ai-c flex-jc-c">
+                        <img src="/images/icon-youtube.svg" alt="youtube icon">
+                        <h2 id="account">@nathanf</h2>
+                    </div>
+                    <div class="followers">
+                        <h2><span  id="followersYoutube">8239</span></h2>
+                        <p>FOLLOWERS</p>
+                    </div>
+                    <p class="variation  variation-negative" id="variationYoutube"><span></span>144 today</p>
+                </div>
+            </div>
+            
+
+            <!------------------------------------------------------------------------------------->
+            <div class="overview" id="overview">
+                <h2>Overview - Today</h2>
+            </div>
+           <!------------------------------------------------------------------------------------->
+
+
+            <div class="secondarygrid">
+                <div class="dailyCard flex flex-ai-c flex-jc-c">
+                    <div class="dailyCard-container">
+                        <h3 class="text">Page Views</h3>
+                        <img src="/images/icon-facebook.svg" alt="facebook icon">
+                        <h3 class="value" id="viewsDailyFace">87</h3>
+                        <p class="p" id="viewsVariationDailyFace"><span></span>3%</p>
+                    </div>
+                </div>
+
+                <div class="dailyCard flex flex-ai-c flex-jc-c">
+                    <div class="dailyCard-container">
+                        <h3 class="text">Likes</h3>
+                        <img src="/images/icon-facebook.svg" alt="facebook icon">
+                        <h3 class="value" id="likesDailyFace">52</h3>
+                        <p class="p p-negative" id="likesVariationDailyFace"><span></span>2%</p>
+                    </div>
+                </div>
+
+                <div class="dailyCard flex flex-ai-c flex-jc-c">
+                    <div class="dailyCard-container">
+                        <h3 class="text">Likes</h3>
+                        <img src="/images/icon-instagram.svg" alt="instagram icon">
+                        <h3 class="value" id="likesDailyInsta">5462</h3>
+                        <p class="p" id="likesVariationDailyInsta"><span></span>2257%</p>
+                    </div>
+                </div>
+
+                <div class="dailyCard flex flex-ai-c flex-jc-c">
+                    <div class="dailyCard-container">
+                        <h3 class="text">Profile Views</h3>
+                        <img src="/images/icon-facebook.svg" alt="instagram icon">
+                        <h3 class="value" id="viewsDailyInsta">52k</h3>
+                        <p class="p" id="viewsVariationDailyInsta"><span></span>1375%</p>
+                    </div>
+                </div>
+
+                <div class="dailyCard flex flex-ai-c flex-jc-c">
+                    <div class="dailyCard-container">
+                        <h3 class="text">Retweets</h3>
+                        <img src="/images/icon-twitter.svg" alt="twitter icon">
+                        <h3 class="value" id="rtDailyTwitter">117</h3>
+                        <p class="p" id="rtVariationDailyTwitter"><span></span>303%</p>
+                    </div>
+                </div>
+
+                <div class="dailyCard flex flex-ai-c flex-jc-c">
+                    <div class="dailyCard-container">
+                        <h3 class="text">Likes</h3>
+                        <img src="/images/icon-twitter.svg" alt="twitter icon">
+                        <h3 class="value" id="likesDailyTwitter">507</h3>
+                        <p class="p" id="likesVariationDailyTwitter"><span></span>553%</p>
+                    </div>
+                    
+                </div>
+
+                <div class="dailyCard flex flex-ai-c flex-jc-c">
+                    <div class="dailyCard-container">
+                        <h3 class="text">Likes</h3>
+                        <img src="/images/icon-youtube.svg" alt="youtube icon">
+                        <h3 class="value" id="likesDailyYT">107</h3>
+                        <p class="p p-negative" id="likesVariationDailyYT"><span></span>19%</p>
+                    </div>
+                </div>
+
+                <div class="dailyCard flex flex-ai-c flex-jc-c">
+                    <div class="dailyCard-container ">
+                        <h3 class="text">Total Views</h3>
+                        <img src="/images/icon-youtube.svg" alt="youtube icon">
+                        <h3 class="value" id="viewsDailyYT">1407</h3>
+                        <p class="p p-negative" id="viewsVariationDailyYT"><span></span>12%</p>
+                    </div>
+                </div>
+           </div>
+        
+        </div>
+    </main>
+
+
+
+
+    <!--https://www.frontendmentor.io/profile/AlexGanderton-->
+    <script src="/app/scripts/dark-mode.js"></script>
+
+</body>
+</html>
