@@ -1,0 +1,84 @@
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    line-height: 1.3;
+    font-weight: 400;
+    font-size: 1.8rem;
+    background-color: $VeryLightGrayishBlue;
+    color: $VeryDarkBlue;
+    transition: background-color .23s ease-in-out;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+input, button{
+    font-size: 1.8rem;
+    font-family: 'Josefin Sans', sans-serif;
+    color: $VeryDarkGrayishBlue;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+.circle{
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: 1px solid $LightGrayishBlue;
+    position: absolute;
+    top: 50%;
+    left: 35px;
+    transform: translate(-50%, -58%);
+}
+
+//flexbox
+.flex{
+    display: flex;
+
+    &-jc-sb{
+        justify-content: space-between;
+    }
+
+    &-jc-c{
+        justify-content: center;
+    }
+
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+//container
+
+//visibility
+.hide-for-mobile{
+    @include breakpoint-down(small){
+        display: none !important;
+    }
+}
+
+.hide-for-desktop{
+    @include breakpoint-up(medium){
+        display: none !important;
+    }
+}
+

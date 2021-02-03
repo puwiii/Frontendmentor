@@ -1,0 +1,20 @@
+@keyframes remove-item{
+    to{
+        transform: translateX(800px);
+        opacity: 0;
+    }
+
+    from{
+        opacity: 1;
+    }
+}
+
+@keyframes insert-item{
+    from{
+        transform: translateX(800px);
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

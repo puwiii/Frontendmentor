@@ -1,0 +1,285 @@
+.container{
+
+    display: flex;
+    flex-direction: column;
+
+    &.dark-mode{
+        
+        .container__todo{
+
+            &-item-container{
+                border-bottom: 1px solid $VeryDarkGrayishBlueDark;
+                color: $LightGrayishBlueDark;
+                background-color: $VeryDarkDesaturatedBlue;
+                &.completed{
+                    
+                    .container__todo-item{
+                        color: $VeryDarkGrayishBlueDark;
+                        text-decoration: line-through;
+                    }
+                }
+            }
+
+            .dragging{
+                background-color: $VeryDarkBlue;
+            }
+
+            .todo-input{
+                color: $LightGrayishBlueDark;
+                background-color: $VeryDarkDesaturatedBlue;
+            }
+
+            .container__todo-list{
+                background-color: $VeryDarkDesaturatedBlue;
+            }
+
+            .container__todo-footer{
+                color: $DarkGrayishBlueDark;
+                background-color: $VeryDarkDesaturatedBlue;
+            }
+        }
+    }
+
+    &__header{
+        color: $VeryLightGray;
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        .tittle{
+            font-size: 5.2rem;
+            letter-spacing: 18px;
+            padding-top: 10px;
+
+            @include breakpoint-down(medium){
+                letter-spacing: 10px;
+            }
+        }
+
+        .dark-btn{
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            margin-left: auto;
+            background: transparent;
+            outline: none;
+            border: none;
+            background-image: url('/images/icon-moon.svg');
+            background-size: cover;
+            transition: opacity .23s ease-in-out, background-image .23s ease-in-out;
+
+            &:hover{
+                opacity: .7;
+            }
+        }
+
+        .light-btn{
+            background-image: url('/images/icon-sun.svg');
+        }
+
+    }
+
+    &__todo{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+        &-input{
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .todo-circle{
+            position: absolute;
+            top: 50%;
+            left: 35px;
+            transform: translate(-50%, -58%);
+            transition: filter .23s ease-out;
+            cursor: pointer;
+         
+            &:hover{
+                filter: brightness(.5);
+            }
+        }
+
+        .todo-input{
+            width: 100%;
+            background-color: $VeryLightGray;
+            padding: 25px;
+            border-radius: 4px;
+            padding-left: 70px;
+        }
+
+        &-list{
+            width: 100%;
+            border-radius: 4px 4px 0 0;
+            background-color: $VeryLightGray;
+            overflow: hidden;
+            box-shadow: 0px 0px 20px rgba(0,0,0,.3);
+        }
+
+        .dragging{
+            background-color: $LightGrayishBlue;
+        }
+
+        &-item-container{
+            cursor: default;
+            position: relative;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            padding: 27px 20px;
+            border-bottom: 1px solid $VeryLightGrayishBlue;
+            background-color: $VeryLightGray;
+            //transition: transform 10s ease-out, opacity 10s ease-out;
+            //animation: insert-item .5s ease-out;
+
+            &:hover{
+                filter: brightness(.95);
+            }
+
+            &:hover > .remove-btn{
+                visibility: visible;
+            }
+
+            &.byebye{
+                animation: remove-item .5s ease-in;
+            }
+
+            &.completed{
+
+                .container__todo-item{
+                    color: $LightGrayishBlueDark;
+                    text-decoration: line-through;
+                }
+
+                .todo-circle{
+                    
+                    background: $CheckBackground;
+
+                    &::before{
+                        position: absolute;
+                        content: '';
+                        width: 24px;
+                        height: 24px;
+                        background-image: url(/images/icon-check.svg);
+                        background-size: 50%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+
+                    &:hover{
+                        filter: brightness(1);
+                    }
+                }
+            }
+            
+        }
+
+        &-item{
+            margin: 0 35px 0 55px;
+            flex: 1;
+            overflow-x: scroll;
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
+            background-color: transparent;
+            user-select: none;
+            &::-webkit-scrollbar{
+                display: none;
+            }
+        }
+
+        .remove-btn{
+            visibility: hidden;
+            cursor: pointer;
+            width: 22px;
+            height: 22px;
+            margin-left: auto;
+            background-image: url('/images/icon-cross.svg');
+            background-size: 70%;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-size .23s ease-in-out;
+
+            &:hover{
+                background-size: 120%;
+            }
+        }
+
+        &-footer{
+            color: $DarkGrayishBlue;
+            display: flex;
+            height: 70px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $VeryLightGray;
+            border-radius: 0 0 4px 4px;
+            box-shadow: 0px 0px 20px rgba(0,0,0,.3);
+        }
+
+        .filters-item, .clr-btn{
+            cursor: pointer;
+            transition: color .23s ease-in-out;
+
+            &:hover{
+                color: $BrightBlue;
+            }
+
+            &.selected{
+                color: $BrightBlue;
+            }
+        }
+
+        .items-left{
+            margin-left: 20px;
+            width: 150px;
+            @include breakpoint-down(medium){
+                flex: 1;
+            }
+        }
+
+        .filters{
+            display: flex;
+
+            &-item{
+                padding: 20px 15px;
+            }
+        }
+
+        .clr-btn{
+            color: $DarkGrayishBlue;
+            margin-right: 20px;
+            width: 150px;
+
+            @include breakpoint-down(medium){
+                width: 0px;
+                flex: 1;
+                text-align: right;
+            }
+        }
+    }
+
+    .container__todo-footer-mobile{
+        color: $DarkGrayishBlue;
+        display: flex;
+        height: 65px;
+        width: 100%;
+        margin-top: 30px;
+        justify-content: center;
+        align-items: center;
+        background-color: $VeryLightGray;
+        box-shadow: 0px 0px 20px rgba(0,0,0,.3);
+        border-radius: 4px;
+        z-index: 10;
+    }
+
+    &__footer{
+        margin-left: auto;
+        margin-right: auto;
+
+        padding: 30px;
+        color: $DarkGrayishBlue;
+    }
+
+
+}

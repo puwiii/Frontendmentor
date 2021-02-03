@@ -1,0 +1,42 @@
+.main{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    
+    @include breakpoint-down(medium){
+        font-size: 1.4rem;
+        .container{
+            max-width: 90%;
+        }
+        button, input{
+            font-size: 1.2rem;
+        }
+    }
+
+    .background{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        background-image: url('/images/bg-desktop-light.jpg');
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        filter: brightness(.9);
+        transition: background-image .23s ease-in-out;
+        
+        &.dark-mode{
+            background-image: url('/images/bg-desktop-dark.jpg');
+        }
+    }
+
+    .container{
+        position: relative;
+        width: 800px;
+        height: 90vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
