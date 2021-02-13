@@ -1,0 +1,70 @@
+.footer{
+    background-color: $VeryDarkBlue;
+    
+    .container{
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint-up(large){
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+    
+    &__logo{
+        display: grid;
+        place-items: center;
+        padding: 40px 20px;
+        img{
+            filter:grayscale(1) brightness(.49) contrast(7) invert(1);
+        }
+
+        
+    }
+
+    &__links{
+       text-align: center;
+        
+        a{  
+            color: $white;
+            display: block;
+            letter-spacing: 1px;
+            transition: color .13s ease-in-out;
+            font-size: $Small;
+            padding: 10px;
+            &:hover{
+                color: $SoftRed;
+            }
+        }
+
+        @include breakpoint-up(large){
+            display: flex;
+            align-items: center;
+            margin-left: 50px;
+        }
+
+    }
+
+    &__socials{
+        display: flex;
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 40px;
+
+        a{
+            display: grid;
+            place-items: center;
+        }
+        
+        img{
+            padding: 10px;
+        }
+
+        @include breakpoint-up(large){
+
+            margin: 0;
+            align-items: center;
+            margin-left: auto;
+        }
+    }
+}

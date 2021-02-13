@@ -1,0 +1,121 @@
+.extensions{
+    text-align: center;
+    margin-top: -50px;
+    margin-bottom: $make-space-mobile;
+    //background: linear-gradient(to top, hsla(231, 100%, 40%, .05) , $white); //rgba(0,0,0,0.06) 
+    clip-path: polygon(0 15vw, 100% 0, 100% 100%, 0 calc(100% - 5vw));
+    background-color: hsla(231, 69%, 60%, .1) ;//hsla(0, 94%, 76%, .9);
+
+    @include breakpoint-up(large){
+        margin-bottom: $make-space-desktop;
+
+    }
+
+    .container{
+        padding-top: 150px;
+        padding-bottom: 150px;
+        
+        @include breakpoint-up(large){
+            padding-top: 15vw;
+            padding-bottom: 5vw;
+        }
+
+    }
+
+    &__cards{
+        
+        margin: auto;
+        display: grid;
+        place-items: center;
+
+        @include breakpoint-up(large){
+            width: 88%;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 475px;
+            margin-bottom: 0;
+        }
+
+    }
+
+    h2{
+        font-size: $VeyLarge;
+        font-weight: 500;
+        //color: $white;
+    }
+
+    p{
+        //color: $LigthGrayishBlue;
+        padding: 10px;
+        @include breakpoint-up(large){
+            width: 40%;
+            margin: auto;
+        }  
+    }
+
+    &__card{
+        display: grid;
+        background-color: $white;
+        place-items: center;
+        box-shadow: 0 5px 18px -10px rgba(0,0,0, .4);
+        border-radius: 10px;
+        margin: 20px;
+        width: 100%;
+        max-width: 300px;
+        
+        img{
+            padding: 20px;
+            margin-top: 10%;
+        }
+
+        h3{
+            font-size: $Medium;
+            font-weight: 500;
+        }
+
+        p{
+            font-size: $Small;
+            width: 100%;
+            color: $Grayishblue;
+        }
+
+        .dots{
+            width: 100%;
+            height: 5px;
+            background-image: url('/images/bg-dots.svg');
+            background-size: 100%;
+            background-repeat: repeat-x;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+
+        .blue-button{
+            display: block;
+            margin: 0;
+            max-width: none;
+            //margin: 10%;
+            width: 80%;
+            height: 50px;
+            line-height: 45px;
+            margin-bottom: 10%;
+
+            @media screen and(max-width: 350px){
+                min-width: none;
+                font-size: $Small;
+            }
+        }
+
+        @include breakpoint-up(large){
+            &.chrome-card{
+                place-self: flex-start flex-end;
+            }
+    
+            &.firefox-card{
+                place-self: center;
+            }
+    
+            &.opera-card{
+                place-self: flex-end flex-start;
+            }
+        }
+    }
+}

@@ -1,0 +1,101 @@
+.faq{
+
+    text-align: center;
+    margin-bottom: $make-space-mobile;
+
+    h2{
+        font-size: $VeyLarge;
+        font-weight: 500;
+        line-height: 4rem;
+    }
+
+    p{
+        padding: 10px;
+        width: 100%;
+        @include breakpoint-up(large){
+            width: 40%;
+            margin: auto;
+        }  
+    }
+
+    &__questions{
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: $make-space-desktop;
+        @include breakpoint-up(large){
+            width: 50%;
+        }
+    }
+
+    &__question{
+        text-align: left;
+        overflow-y: hidden;
+        border-bottom: 1px solid $LigthGrayishBlue;
+        
+        label{
+            cursor: pointer;
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 500;
+            width: 100%;
+            line-height: 50px;
+            height: 50px;
+            position: relative;
+
+            &:hover{
+                color: $SoftRed;
+            }
+
+            &::after{
+                content: "";
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-25%);
+                width: 20px;
+                height: 20px;
+                background-image: url('/images/icon-arrow.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                transition: transform .6s ease-in-out;
+                transform-origin: center 3px;
+            }
+
+            @include breakpoint-up(medium){
+                font-size: $Medium;
+            }
+        }
+
+        p{
+            padding: 0;
+            height: 0;
+            transition: .6s;
+            max-height: calc(255px - 5vw);
+            @include breakpoint-up(large){
+                width: 100%;
+            }
+        }
+
+    
+        &.open{
+            label{
+                &::after{
+                    //top: 0%;
+                    transform: rotate(180deg);
+                }
+            }
+            p{
+                height: 225px;
+                overflow-y: auto;
+                @include breakpoint-up(large){
+                    height: 125px;
+                }
+            }
+        }
+    }
+
+    .blue-button{
+        margin: 40px auto;
+    }
+}

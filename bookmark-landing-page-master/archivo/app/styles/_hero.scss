@@ -1,0 +1,194 @@
+.hero{
+    width: 100vw;
+    padding-top: 30px;
+    //hero image styles
+
+    .container{
+        display: grid;
+
+        @include breakpoint-up(large){
+            grid-template-columns: 50% 50%;
+        }
+    }
+
+    &__image{
+        order: 1;
+        width: 100%;
+        position: relative;
+        z-index: -1;
+
+        img{
+            width: inherit;
+        }
+
+        .shape{
+            position: absolute;
+            width: 60vw;
+            border-radius: 80vw 0 0 80vw;
+            height: 60%;
+            bottom: 0;
+            left: 40%;
+            margin-right: -10%;
+        }  
+        
+        @include breakpoint-up(medium){
+            order: 2;
+        }
+    }
+
+    &__text{
+        order: 2;
+        text-align: center;
+        padding: 40px 0;
+
+        h1{
+            font-size: $Large;
+        }
+
+        p{
+            padding: 10px 0;
+            @include breakpoint-up(large){
+                padding: 30px 0;
+            }
+        }
+
+        @include breakpoint-up(large){
+            order: 1;
+            text-align: left;
+            padding: 50px 0;
+            h1{
+                font-size: $XLarge;
+                font-weight: 500;
+                width: 500px;
+            }
+
+            p{
+                max-width: 400px;
+            }
+        }
+
+    }
+
+    &__buttons{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @include breakpoint-up(large){
+            justify-content: start;
+            margin-left: -5px;
+        }
+    }
+
+    @include breakpoint-up(large){
+        padding-top: $make-space-desktop;
+    }
+}
+
+
+// .hero{
+//     display: flex;
+//     flex-direction: column;
+//     margin-bottom: $make-space-mobile;
+
+//     &__image{
+//         display: flex;
+//         width: 100%;
+//         height: 80vw;
+//         background-image: url('/images/illustration-hero.svg');
+//         background-repeat: no-repeat;
+//         background-size: contain;
+//         background-position: center;
+//         margin-bottom: 40px;
+
+//         img{
+//             display: none;
+//         }
+
+//         .shape{
+//             border-radius: 80vw 0 0 80vw;
+//             margin-left: auto;
+//             align-self: flex-end;
+//         }
+//     }
+
+//     &__text{
+//         text-align: center;
+
+//         h1{
+//             font-size: $VeyLarge;
+//             font-weight: 500;
+//             margin-bottom: 2rem;
+//             text-shadow: rgba(0, 0, 0, 1);
+//         }
+
+//         p{  
+//             color: $Grayishblue;
+//             font-size: $Medium;
+//             margin-bottom: 2rem;
+//             padding: 0;
+//         }
+//     }
+    
+//     &__buttons{
+//         display: flex;
+//         width: 100%;
+//         justify-content: center;
+//         flex-wrap: wrap;
+//         .blue-button, .gray-button{
+//             display: grid;
+//             place-content: center;
+//             height: 6vw;
+//             min-height: 40px;
+//             max-height: 50px;
+//             width: 40%;
+//             margin: 5px;
+//             min-width: 130px;
+//             max-width: 200px;
+//         }
+//     }
+
+//     @include breakpoint-up(large){
+//         flex-direction: row-reverse;
+//         max-height: 500px;
+//         margin-bottom: $make-space-desktop;
+
+//         &__image{
+//             position: relative;
+//             align-self: center;
+//             display: flex;
+//             width: 100%;
+//             max-height: 500px;
+//             min-height: 350px;
+//             height: 36vw;
+//             background-size: contain;
+
+//             .shape{
+//                 right: 0;
+//             }
+//         }
+
+//         &__text{
+//             text-align: left;
+
+//             h1{
+//                 margin-top: 50px;
+//             }
+
+//             p{
+//                 padding-right: 50px;
+//             }
+//         }
+
+//         &__buttons{
+//             justify-content: flex-start;
+//             max-width: 100%;
+//             a{
+//                 max-width: 200px;
+//                 &:first-child{
+//                     margin-left: 0;
+//                 }
+//             }
+//         }
+//     }
+// }
